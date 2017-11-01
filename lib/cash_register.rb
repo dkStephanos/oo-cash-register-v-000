@@ -11,11 +11,7 @@ class CashRegister
     end
   end
 
-  def add_item(title, price, quantity = nil)
-    if !quanitity
-      quanitity = 1
-    end
-
+  def add_item(title, price, quantity = 1.0)
     @total += price * quantity
     @last_price += price * quantity
     @items << title
@@ -36,4 +32,5 @@ class CashRegister
     @total -= @last_price
     @last_price = 0.0
     @items.pop!
+  end
 end
